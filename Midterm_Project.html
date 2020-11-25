@@ -1,0 +1,562 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>Midterm_Project</title><link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit inherit; background-repeat: inherit inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) { 
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right-width: 0px; background-color: inherit; }
+.CodeMirror-linenumber { }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; position: relative !important; background-position: inherit inherit; background-repeat: inherit inherit; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; background-repeat: initial initial; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print { 
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background-color: rgb(204, 204, 204); display: block; overflow-x: hidden; background-position: initial initial; background-repeat: initial initial; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) { 
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; background-position: initial initial; background-repeat: initial initial; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; }
+a.md-print-anchor { white-space: pre !important; border: none !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; text-shadow: initial !important; background-position: 0px 0px !important; background-repeat: initial initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom-width: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+svg[id^="mermaidChart"] { line-height: 1em; }
+mark { background-color: rgb(255, 255, 0); color: rgb(0, 0, 0); background-position: initial initial; background-repeat: initial initial; }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
+@media print { 
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border-top: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table tr th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
+}
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+    --item-hover-bg-color: #E6F0FE;
+}
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+ .typora-export li, .typora-export p, .typora-export,  .footnote-line {white-space: normal;} 
+</style>
+</head>
+<body class='typora-export'>
+<div id='write'  class=''><p><strong><span>项目评分表</span></strong><span>：</span></p><p><img src="/Users/rime/Desktop/Smart City Midterm Project.jpg" referrerpolicy="no-referrer" alt="项目要求"></p><p>&nbsp;</p><h1><a name="smartcityintaipei" class="md-header-anchor"></a><span>Smart_City_In_Taipei</span></h1><h3><a name="1案例背景" class="md-header-anchor"></a><span>1.案例背景</span></h3><p><span>在2020年实现台北市智能向智慧城市转型。</span></p><p><strong><span>2020包含的时间背景：</span></strong><span>欧美国家因为没有SARS时惨痛的经验，以至于现在COVID-19付出了很大的社会代价，但是因为这样糟糕的总体环境，企业及政府在进行数位转型是做得很彻底的。换句话说，疫情过去后，新型态的企业或政府组织会有较高的经营效率。</span></p><p><strong><span>台北市智慧型城市背景：</span></strong><span>摘自SmartCityTaipei（Brochure）</span></p><p><img src="/Users/rime/Desktop/背景1.jpg" alt="背景1"  /></p><p><strong><span>案例内容：</span></strong><span>摘自SmartCityTaipei（Brochure）</span></p><p><img src="/Users/rime/Desktop/背景2.jpg" referrerpolicy="no-referrer" alt="背景2"></p><p><span>                                 </span><strong><span>可以看到在台北市的智慧城市进程中，资讯信息安全是全程贯穿的。</span></strong></p><p>&nbsp;</p><h3><a name="2面临的挑战" class="md-header-anchor"></a><span>2.面临的挑战</span></h3><p><strong><span>时间上：</span></strong><span>台北市长柯文哲今下午前往文华东方,出席北市卫生局举办的「智慧心生态健康新时代」活动,柯文哲在致词时提到智慧转型,除讲到台湾因过去SARS惨痛经验,现在防疫系统才会做得这么好;其他国家被迫封城,2个月内就做好智慧转型,但台湾因疫情控制稳定,所以没有做得很好,包含领取数位三倍券人数不尽理想。</span></p><p><img src="/Users/rime/Desktop/台湾新冠数据.jpg" referrerpolicy="no-referrer" alt="台湾新冠数据"></p><p>&nbsp;</p><p><strong><span>政治上：</span></strong><span>在人才引进上，台北市做的远远不够，海的另一边是亚洲最大的经济体，人才群集，落实新型政策，合理引进才是对城市智慧型发展的切入。</span></p><p><strong><span>城市历史上：</span></strong><span>历史上台北市被迫智慧城市化。</span>
+<span>台北市的治理结构因应科技风潮的而「被迫」必需智慧化，是在地政服务导入资讯化流程的那个年代 (1980年)。比如说，土地登记誊本、建物登记誊本、地价誊本、地籍图誊本及异动索引、建物门牌查询等的电子化，这些都足以称之为「智慧化」的过去。</span>
+<span>虽然那已经是三十多年前的时代，但有经验的市府主管们一定还记得当时对于「治理技巧」冲击的那个年代。</span></p><p>&nbsp;</p><h3><a name="3智慧城市愿景" class="md-header-anchor"></a><span>3.智慧城市愿景</span></h3><p><strong><span>台北市推动智慧城市主要串联Top-down 、Bottom-up以及市民参与三种机制。</span></strong></p><p><span>Top-down :资讯局及台北智慧城市专案办公室主要依据府内的策略地图行动计划或各局处的政策规划,协助媒合各局处与相关业者,提出成熟的解决方案;包括台北车站智</span>
+<span>慧化、3U计划以及智慧公宅等。</span>
+<span>Bottom-up:台北市推动全国首创之「台北市智慧城市产业场域实验试办计划」,民间业者透过提案,经由资讯局与台北智慧城市专案办公室的评估及行政协调,可于台北市场域进行实证:例如空气盒子应用、自驾车实证场域、智慧路灯及物联网创新实验室等。</span>
+<span>后续也逐渐衍生出融合机制的新模式,如「台北市立联合医院智慧病房场域实验试办计划」即是在Top-down政策规划内加入Bottom-up机制概念的专案。</span>
+<span>此外,市民参与也是台北市推动智慧城市的重要机制之一,市民可透过参与式预算i-Voting、工作坊或开放资料等针对市政进行提案。</span></p><p><img src="/Users/rime/Desktop/台湾智慧城市愿景.jpg" referrerpolicy="no-referrer" alt="台湾智慧城市愿景"></p><p>&nbsp;</p><h3><a name="4利益相关者分析" class="md-header-anchor"></a><span>4.利益相关者分析</span></h3><p><img src="/Users/rime/Desktop/智慧城市建设利益相关者.jpg" referrerpolicy="no-referrer" alt="智慧城市建设利益相关者"></p><h5><a name="一市政府及其相关组成部门" class="md-header-anchor"></a><span>一.市政府及其相关组成部门：</span></h5><p><span>政府部门是智慧城市建设的基础,在智慧城市建设中起到核心作用,他们负责城市日常管理,是智慧城市建设的主要推动者。政府部门倡导智慧城市建设的主要动机源于日益增长的市民对公共服务需求的压力,推行政务公开的需要和建设法治政府、服务型政府和阳光政府的需要,旨在运用ICT等提高经济和能源效率、提升环境可持续性、政策和决策透明性、公共服务均等性和城市宜居性等。在智慧城市建设过程中,政府有责任从长远规划和目前亟须相结合角度选择符合当地的智慧城市建设模式和路径。</span></p><h5><a name="二城市公共事业服务单位" class="md-header-anchor"></a><span>二.城市公共事业服务单位：</span></h5><p><span>主要是指与百姓日常生活相关的煤水电气及交通等相关的公司,他们是智慧城市某些项目的具体应用和实施者,例如智能电网、智慧交通和智慧医疗等,因此他们也是智慧城市利益相关者。</span>
+<span>他们参与推动智慧城市建设的目的是提升管理效率、精确统计用户消费行为、提升市场预测能力、减少各自领域的能源流失、节约管理成本和为用户提供精准化和人性化服务。他们在参与当地智慧城市建设中会遇到的共同困难就是这些企业很多都是集团化企业在当地的分公司,他们对他们业务系统大多只有使用权限而没有修改权限,很难针对某个城市进行单独的系统改造或对接,而这些企业的总部协调起来都比较费劲。</span></p><h5><a name="三市民及相关社团组织" class="md-header-anchor"></a><span>三.市民及相关社团组织：</span></h5><p><span>首先,市民是智慧城市建设成果的最终使用者,是一座城市成功转型成智慧城市的关键因素,因此市民知悉智慧城市各项目的特征及功能十分重要,如果市民对智慧城市不了解、不参与、不使用,智慧城市建设注定要失败1,这也是我国目前智慧城市建设的通病。其次,市民还可以作为智慧城市建设的数据源和传感器[17,国内外很多智慧城市建设案例已这么做了,例如智慧交通、百度导航等。最后,市民参与是智慧城市实现以市民为中心建设效果的关键因素。</span></p><p>&nbsp;</p><h3><a name="5采取了哪些改变措施" class="md-header-anchor"></a><span>5.采取了哪些改变措施</span></h3><h5><a name="一2020智慧城市1--7项目征集政府采取措施）" class="md-header-anchor"></a><span> 一.2020智慧城市1 + 7项目征集（政府采取措施）</span></h5><p><span>各领域的项目征集期为</span><strong><span>2020年11月16日至2020年12月15日</span></strong><span>。利益相关者可以根据各局，部门的项目征集要求编写建议书，并将建议书提交TPMO。  </span></p><p><span>TPMO首先将进行书面审查，然后将提案发送给各个领域的团队，以讨论选择哪些合作者。审查结果定于</span><strong><span>2021年1月20日公布</span></strong><span>。审查结果公布后，项目征求部门，部门和选定的供应商将进行场地协调，现场检查，提案定稿等工作。完成合作协议签署后，选定的供应商将执行合同和经验性项目，并在项目执行结束时进行机会评估。</span></p><p><span>通过智慧城市指导小组的专业和系统的操作，可以有效地融合自上而下的政策推广和自下而上的私人协作资源的力量，从而在完善推广政策和实证项目后完成决策。台北市政府内部和外部专家对智慧城市的各个领域进行评估，并由智慧城市委员会进行检查。</span></p><p><img src="/Users/rime/Desktop/content_徵案流程圖英文.png" referrerpolicy="no-referrer" alt="content_徵案流程圖英文"></p><p>&nbsp;</p><h5><a name="二台北x福冈line-oa合作计划" class="md-header-anchor"></a><span>二.台北x福冈LINE OA合作计划</span></h5><p><span>台北与福冈之间保持着长期的友好交往，为两国之间的交流打下了深厚的基础。近年来，他们还致力于创新育种和智慧城市的发展。2019年福冈智能战略部以LINE官方帐户为主题启动了一个新的协作篇章。</span></p><p><span>台北市在LINE上的官方帐户服务已经培养了很长一段时间，现在包括许多功能，例如公共设施位置查询，受欢迎的政策问答以及定制的市政信息订阅。于2019年8月邀请日本LINE福冈智慧战略部访问信息技术部进行交流交流，并邀请台北智慧城市项目管理办公室（TPMO）参加LINE智慧城市日福冈年度活动，分享智慧城市推广经验。同时，LINE福冈智能战略部还以此为契机，提出了创新的应用方案，以将城市的OA（官方帐户）转变为旅游信息传输渠道。</span></p><p><span>预计从2020年春季开始，双方将正式启动LINE官方账户合作计划，这将是世界上第一个使用政府LINE官方账户进行跨境合作的案例。将来，无论游客是从台北到福冈，还是从福冈到台北，除了使用LINE开发的Smart Channel功能外，该系统还将自动筛选合格的用户并为目标乘客准确发送关键信息，以实现准确的送达，您还可以通过所属城市的官方帐户获得相关的当地旅行信息（例如交通，旅游，防灾等）。通过这项合作计划，</span></p><h5><a name="三智慧城市1--7的推广框架" class="md-header-anchor"></a><span>三.智慧城市1 + 7的推广框架</span></h5><p><span>通过研究国外先进城市做法并参照国际基准城市结构，台北市将从5 + N布局修订为“ 1核心+ 7主题”推广框架，以“智能政府”推广“智慧”建筑物”，“智能交通”，“智能教育”，“智能健康”，“智能环境”，“智能安全”和“智能经济”；并结合四个方向：“开放政府”，“公民参与”，“开放数据”，“国际联系”促进行动，并实施“公私合内，由内而外”的战略。</span>
+<span>希望将来，通过1 + 7的多级域结构并在1 + 7领域建立台北智能城市推广团队，我们将促进台北智能城市的发展。通过市政局的合作，我们将继续朝着使台北成为宜居城市的可持续目标迈进。</span></p><p><img src="/Users/rime/Desktop/normal_Capture.png" alt="normal_Capture" style="zoom:100%;" /></p><h5><a name="四台北物联网实验平台-内湖智慧园区5g测试项目" class="md-header-anchor"></a><span>四.台北物联网实验平台-内湖智慧园区5G测试项目</span></h5><p><span>为了发展智慧城市并提升物联网产业的竞争力，台北市政府正积极创建“台北物联网实验平台”作为实验领域，以实现各种物联网技术的创新应用，以加速台湾的物联网技术以及产品的成熟和发展。</span></p><p><span>过去，“台北物联网实验平台”成功推广了“ LoRa开发与应用”，吸引了80多个新的创业团队报名参加试验，并与业界合作开通了10,000个Sigfox帐户免费申请，并推广OGC国际通用标准平台应用程序的开发，希望通过这些物联网实验平台，创新的应用程序可以发挥其全部潜力，并创建满足市民需求的服务。</span></p><p><span>随着5G在全球市场的快速发展，信息技术部，台北市政府和远传电信于2019年10月4日宣布将启动``内湖智能园5G测试项目&#39;&#39;，这将继续公私合作以创新的实验精神打造“台北物联网实验平台”，创建台湾首个“ 5G开放测试领域”，并开放100个团队申请免费的为期三个月的5G环境测试，欢迎初创企业，制造商，学术研究和其他单位，使更多创新应用在台北市发生。</span>
+<span> </span><img src="/Users/rime/Desktop/normal_5G記者會_191004_0037.jpg" referrerpolicy="no-referrer" alt="normal_5G記者會_191004_0037"></p><p>&nbsp;</p><h5><a name="五区块链数字身份证观光增值服务" class="md-header-anchor"></a><span>五.区块链数字身份证观光增值服务</span></h5><p><span>近年来，台北市政府一直在思考如何使用创新的区块链技术来促进公众的应用。因此，政府于2018年与IOTA签署了合作备忘录，并希望未来能根据需求讨论应用模型。</span></p><p><span>IOTA台湾代理商Biilabs提议以城市观光为主要应用主题，使用分布式账本技术（DLT）建立用于身份验证的数字ID链接数据库，以确认用户是台北市或姊妹城市的公民，并向人们提供从台北市或姊妹城市享受相同的两座城市观光折扣，以促进两座城市的区块链观光应用和服务，并吸引更多游客树立美好的台湾形象。现在正在积极地进行讨论。将来，可以通过这种技术开发多增值应用程序，例如民间社会福利项目，小额付费等，希望通过创新技术为公民提供更好的服务。</span></p><p><img src="/Users/rime/Desktop/normal_大.png" alt="normal_大" style="zoom:100%;" /></p><p><span>预期收益：有望通过区块链技术将创新应用引入台北市，为两市人民提供明智的旅游应用服务，不仅促进旅游业的发展，而且促进台北市的发展。</span></p><h5><a name="六idc互联网数据中心）图像去识别试点项目" class="md-header-anchor"></a><span>六.IDC（互联网数据中心）图像去识别试点项目</span></h5><p><span>随着技术的应用在人们的生活中越来越普遍，可以通过图像识别进一步获得的信息也越来越广泛。因此，欧美和许多先进国家已经开始重视在使用ICT技术的情况下保护个人隐私。当台北市迈向智慧城市时，在服务设计的初期阶段也必须考虑个人隐私问题。鉴于此，台北市政府信息技术部与私人部门合作进行短期在IDC中进行示威 并通过IDC入口和出口监视图像导入了Genetec Privacy Protector功能，以镶嵌在前端监视屏幕中移动的对象，以防止监视人员在现场任意泄露原始信息以维护相关隐私。一旦发生事件，可以通过授权人员的帐户访问清晰图像。可以记录相关操作，以供管理员查询并实现合理优化的图像监控管理。</span></p><p><img src="/Users/rime/Desktop/normal_大圖.jpg" referrerpolicy="no-referrer" alt="normal_大圖"><span> </span></p><p>&nbsp;</p><h5><a name="七智能停车收费高清视频识别系统试点项目" class="md-header-anchor"></a><span>七.智能停车收费高清视频识别系统试点项目</span></h5><p><span>解决城市停车问题一直是台北市政府交通部门的目标。目前，市民可通过“台北简易停车” APP掌握路外停车信息，停车费查询和停车指导三大功能。智能停车解决方案是多种多样的，可以通过智能停车柱和地磁信息回程实现。台北市政府也正在积极寻找适合每个领域的解决方案。经验丰富的开发商FUTEK建议通过摄像头使用高视频识别系统，并且车牌识别技术可达到路边智能停车收费应用，协助台北市政府交通部门掌握路边停车状态，停车记录，该行业也是台北市停车场的分包商。因此，可以通过这种经验案例来比较自动计费和当前手动计费之间的差异，以及使用智能设备辅助手动计费以降低管理成本的好处。</span></p><p><img src="/Users/rime/Desktop/normal_123456.jpeg" referrerpolicy="no-referrer" alt="normal_123456"></p><p>&nbsp;</p><h3><a name="6有什么成效" class="md-header-anchor"></a><span>6.有什么成效？</span></h3><p><span>台北市积极与国际智慧城市连结、参加国际智慧城市相关论坛活动,相互学习及分享经验,并自2014年起,每年于台北市主办「智慧城市展」,加深城市间的交流; 2018年智慧城市展有来自33个国家地区以上、超过120位的城市首长或代表率领300余位团员与会交流。目前台北市已与超过30个国际城市交流,在不同主题下讨论新创的想法及经验。此外,台北市正在筹组开放且务实的全球性组织GOSMART (Global Orgnization of Smart Cities) ,下一步将与国际城市发展实质合作关系,共同进行概念性实证专案(Inter-City PoC) ,携手为国内外智慧城市相关产业,创造智慧经济</span></p><p><strong><span>台湾智慧城市展：</span></strong></p><p><span>自2014年开始举办的「智慧城市论坛暨展览」(Smart City Summit &amp; Expo,简称SCSE),已达到以下几项效益：</span>
+<span>1·它是台湾资通讯产业新兴的国际展会</span>
+<span>2,它是全球城市管理者分享智慧城市发展经验的平台</span>
+<span>-从来访的城市数量来看,它是亚洲最大的智慧城市专业展会</span>
+<span>3·它是智慧城市各种解决方案的展会(loT Solution Fair)</span>
+<span>-含括领域有智慧医疗、智慧建筑、智慧教育、智慧能源、智慧交通、智慧安防、智慧水务等</span></p><p><img src="/Users/rime/Desktop/台北智能城市应用.jpg" referrerpolicy="no-referrer" alt="台北智能城市应用"></p><p><span>建议阅读链接：</span><a href='http://smartcity.org.tw/application_list.php?c=%E5%8F%B0%E5%8C%97%E5%B8%82' target='_blank' class='url'>http://smartcity.org.tw/application_list.php?c=%E5%8F%B0%E5%8C%97%E5%B8%82</a></p><h3><a name="总结" class="md-header-anchor"></a><span>总结：</span></h3><p><span>东北亚到东南亚的海镜,绝大多数的线路必须通过台湾东岸和南岸。如同马六甲海峡的地理位置造就了新加坡不公平竞争优势,巴拿马海峡造就了巴拿马籍注册轮运的蓬勃。连结智慧时代资料流的海镜,造就了数位港湾和网络强勒互连的态势。台北都会区有著最高密度的知识工作者,和砂谷所在的加州,也有淡水、八里和头城等海镜上岸处的实际连结。台北在城市发展的战略层面,如何强化网络效益(network effect),在网路(internet)扮演更为积极的角色?人流、物流、金流、服务流和资料流,台北都会区不应该忘了自己无法取代的重要角色。</span></p><p>&nbsp;</p></div>
+</body>
+</html>
